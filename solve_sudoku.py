@@ -1,12 +1,4 @@
-solved = []
 n=9
-def output(matrix):
-    for i in range(n):
-        dup = []
-        for j in range(n): dup.append(matrix[i][j])
-        solved.append(dup)
-    return solved
-
 def find_empty(board):
     for i in range(9):
         for j in range(9):
@@ -92,4 +84,3 @@ def solve_sudoku_(board):
                 return True
             board[empty[0]][empty[1]] = 0 
     return False
-
