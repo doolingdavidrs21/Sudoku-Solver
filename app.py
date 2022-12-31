@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from board import normal_board, six_board, matrix_to_df
-from solve_sudoku import solve_sudoku_, input_valid, output
+from solve_sudoku import solve_sudoku_, input_valid
 
 style = """
 <style>
