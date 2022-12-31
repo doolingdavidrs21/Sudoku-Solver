@@ -15,10 +15,6 @@ div[class*="stSelectbox"] label {
 div[class*="stTextArea"] label {
   font-size: 20px;
 }
-
-div[class*="stMarkdown"] label {
-  font-size: 20px;
-}
 </style>
 """
 st.write(style, unsafe_allow_html=True)
@@ -60,7 +56,7 @@ if st.button("Solve!"):
         msg,check=input_valid(input)
         if(check):
             if(solve_sudoku_(input)):
-                st.write(matrix_to_df(output(input),M))
+                st.write(matrix_to_df(input,M))
             else: st.write("Invalid Sudoku!!")
         else: 
             st.write("""### """, msg)
@@ -69,6 +65,3 @@ if st.button("Solve!"):
 else:
     st.header('Board Layout')
     st.write(matrix_to_df(input,M))
-
-
-
