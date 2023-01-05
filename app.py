@@ -3,11 +3,25 @@ import streamlit as st
 from board import four_board, six_board, nine_board, eight_board , matrix_to_df
 from solve_sudoku import solve_sudoku, input_valid
 
+st.set_page_config(
+    page_title="Sudoku Solver",
+    page_icon="🧊",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': None,
+        'Report a bug': None,
+        'About': "# Sudoku Solver\nThis App can solve 4X4, 6X6, 8X8, 9X9 Sudoku puzzles  \n~Suhas Prabhu"
+    }
+)
+
 st.markdown(
     """
     <style>
     [data-baseweb="select"] {
-        margin-top: -40px;
+        margin-top: -30px;
+    }
+    [data-baseweb="textarea"] {
+        margin-top: -30px;
     }
     </style>
     """,
@@ -16,7 +30,7 @@ st.markdown(
 
 st.title("Sudoku Solver")
 
-st.subheader("Select the type of Sudoku to be solved")
+st.write("### Select the type of Sudoku to be solved")
 type = st.selectbox(
     '',
     ('4X4','6X6','8X8','9X9')
@@ -35,7 +49,8 @@ elif (type == '9X9'):
     board = nine_board
     size,n,r,c=350,9,3,3
 
-input_data = st.text_area(label = 'Enter the Sudoku in the below board', value=board, height=size)
+st.write("### Enter the Puzzle below")
+input_data = st.text_area(label="",value=board, height=size)
 
 input = []
 
