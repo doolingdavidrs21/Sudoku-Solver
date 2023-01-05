@@ -6,11 +6,8 @@ from solve_sudoku import solve_sudoku, input_valid
 st.markdown(
     """
     <style>
-    div[class*="stSelectbox"] label {
-        font-size: 20px;
-    }
-    div[class*="stTextArea"] label {
-        font-size: 20px;
+    [data-baseweb="select"] {
+        margin-top: -40px;
     }
     </style>
     """,
@@ -19,8 +16,9 @@ st.markdown(
 
 st.title("Sudoku Solver")
 
+st.subheader("Select the type of Sudoku to be solved")
 type = st.selectbox(
-    'Select the type of Sudoku to be solved',
+    '',
     ('4X4','6X6','8X8','9X9')
 )
 
