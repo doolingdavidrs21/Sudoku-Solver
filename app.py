@@ -1,6 +1,6 @@
 import re
 import streamlit as st
-from board import four_board, six_board, nine_board , matrix_to_df
+from board import four_board, six_board, nine_board, eight_board , matrix_to_df
 from solve_sudoku import solve_sudoku, input_valid
 
 st.markdown(
@@ -21,7 +21,7 @@ st.title("Sudoku Solver")
 
 type = st.selectbox(
     'Select the type of Sudoku to be solved',
-    ('4X4','6X6','9X9')
+    ('4X4','6X6','8X8','9X9')
 )
 
 if (type == '4X4'):
@@ -29,7 +29,10 @@ if (type == '4X4'):
     size,n,r,c=200,4,2,2
 elif (type == '6X6'):
     board = six_board
-    size,n,r,c=350,6,2,3
+    size,n,r,c=300,6,2,3
+elif (type == '8X8'):
+    board = eight_board
+    size,n,r,c=350,8,2,4
 elif (type == '9X9'):
     board = nine_board
     size,n,r,c=350,9,3,3
