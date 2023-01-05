@@ -37,8 +37,6 @@ def col_check(matrix, col, n):
 			st.add(matrix[i][col])
 	return True
 
-
-
 def box_check(matrix, startRow, startCol, r, c):
 	st = set()
 	for row in range(0, r):
@@ -49,7 +47,6 @@ def box_check(matrix, startRow, startCol, r, c):
 			if curr != 0:
 				st.add(curr)
 	return True
-
 
 def isValid(matrix, row, col, n, r, c):
     a,b,c=row_check(matrix, row, n),col_check(matrix, col, n),box_check(matrix, row - row % r, col - col % c, r, c)
@@ -62,7 +59,6 @@ def isValid(matrix, row, col, n, r, c):
     elif(not a and not b and not c): msg = "Identical numbers in row, column and box"
     else: msg = ""
     return (msg,(a and b and c))
-
 
 def input_valid(matrix,n,r,c):
     for i in range(0, n):
